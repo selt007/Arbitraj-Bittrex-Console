@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Arbitraj_Bittrex_Console</RootNamespace>
     <AssemblyName>Arbitraj Bittrex Console</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\BOT Bittrex Console\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultETHLTC.cs" />
+    <Compile Include="ResultBTCLTC.cs" />
+    <Compile Include="ResultBTCETH.cs" />
+    <Compile Include="roBTCETH.cs" />
+    <Compile Include="roETHLTC.cs" />
+    <Compile Include="roBTCLTC.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
