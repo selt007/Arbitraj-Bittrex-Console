@@ -9,6 +9,6 @@ namespace Arbitraj_Bittrex_Console
     {
         public bool success { get; set; }
         public string message { get; set; }
-        public ResultBTCETH result { get; set; }
+        public ResultETHLTC result { get; set; }
     }
 }
