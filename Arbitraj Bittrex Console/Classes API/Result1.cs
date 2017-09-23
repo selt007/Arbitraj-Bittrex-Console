@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Arbitraj_Bittrex_Console
 {
-    class ResultBTCLTC
+    class Result1
     {
         public double Bid { get; set; }
         public double Ask { get; set; }

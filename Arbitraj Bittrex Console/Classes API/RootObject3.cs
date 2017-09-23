@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Arbitraj_Bittrex_Console
 {
-    class roBTCLTC
+    class RootObject2
     {
         public bool success { get; set; }
         public string message { get; set; }
-        public ResultBTCLTC result { get; set; }
+        public Result2 result { get; set; }
     }
 }

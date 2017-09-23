@@ -46,14 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BTC-LTC-X.cs" />
+    <Compile Include="BTC-ETH-X.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultETHLTC.cs" />
-    <Compile Include="ResultBTCLTC.cs" />
-    <Compile Include="ResultBTCETH.cs" />
-    <Compile Include="roBTCETH.cs" />
-    <Compile Include="roETHLTC.cs" />
-    <Compile Include="roBTCLTC.cs" />
+    <Compile Include="Classes API\Result3.cs" />
+    <Compile Include="Classes API\Result2.cs" />
+    <Compile Include="Classes API\Result1.cs" />
+    <Compile Include="Classes API\RootObject1.cs" />
+    <Compile Include="Classes API\RootObject2.cs" />
+    <Compile Include="Classes API\RootObject3.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
