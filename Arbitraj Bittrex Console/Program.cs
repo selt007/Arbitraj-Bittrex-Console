@@ -1,12 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 
 namespace Arbitraj_Bittrex_Console
 {
     class Program
     {
-        public static double total, total2, total3, valuex1;
-        public static double ask, bid1, bid2;
+        public static double total;
 
         static void Main(string[] args)
         {
@@ -17,7 +17,7 @@ namespace Arbitraj_Bittrex_Console
                 Console.WriteLine("Arbitraj Bittrex запущен...");
                 Console.ReadLine();
             }
-            catch { Console.WriteLine("Не верный ввод данных!"); Console.ReadLine(); }
+            catch { Console.WriteLine("Упс... Какая-то ошибка... :("); Console.ReadLine(); }
         }
 
         public static void Out(object state)
@@ -25,16 +25,14 @@ namespace Arbitraj_Bittrex_Console
             total = 0.0005;
 
             BTC_ETH_X.LTC();
-            BTC_LTC_X.ETH();
+            BTC_ETH_X.revLTC();
 
-            if (BTC_ETH_X.profit > BTC_LTC_X.profit)
-            {
-                Console.WriteLine("pokupaem eth-ltc");
-            }
-            else
-            {
-                Console.WriteLine("pokupaem ltc-eth");
-            }
+            double profitMax;
+            double[] arrProf = { BTC_ETH_X.profitLTC, BTC_ETH_X.profitrevLTC };
+            profitMax = arrProf.Max();
+
+            if (profitMax == 0) { Console.ReadLine(); }
+            else { Console.WriteLine(profitMax); }
         }
     }
 }
