@@ -34,14 +34,9 @@ namespace Arbitraj_Bittrex_Console
             total2 = ((valuex1 * bid1) * 0.9975);
             bid2 = Result3.result.Bid;
             total3 = ((total2 * bid2) * 0.9975);
-
-            if (total3 > total)
-            {
-                profitLTC = (total3 - total) * 100000000;
-                profitLTC = Math.Round(profitLTC, 0);
-                Console.WriteLine("Профит BTC-LTC: " + profitLTC + " сатоши");
-            }
-            else {  }
+            
+            profitLTC = (total3 - total) * 1000;
+            profitLTC = Math.Round(profitLTC, 5);
         }
 
         public static void revLTC()
@@ -63,20 +58,15 @@ namespace Arbitraj_Bittrex_Console
             var Result3 = JsonConvert.DeserializeObject<RootObject3>(gm);
 
             //
-            ask = Result3.result.Ask;
+            ask = Result1.result.Ask;
             valuex1 = ((total / ask) * 0.9975);
             bid1 = Result2.result.Ask;
             total2 = ((valuex1 * bid1) * 0.9975);
-            bid2 = Result1.result.Bid;
+            bid2 = Result3.result.Bid;
             total3 = ((total2 * bid2) * 0.9975);
-
-            if (total3 > total)
-            {
-                profitrevLTC = (total3 - total) * 100000000;
-                profitrevLTC = Math.Round(profitrevLTC, 0);
-                Console.WriteLine("Профит BTC-ETH: " + profitrevLTC + " сатоши");
-            }
-            else { }
+            
+            profitrevLTC = (total3 - total) * 1000;
+            profitrevLTC = Math.Round(profitrevLTC, 5);
         }
 
         public static void drugaya_valyuta()
