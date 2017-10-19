@@ -1,6 +1,7 @@
 ﻿using Arbitraj_Bittrex_Console.Classes_API_GetMarketHis;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 
@@ -8,11 +9,14 @@ namespace Arbitraj_Bittrex_Console
 {
     class BTC_ETH_X
     {
-        public static double profitLTC, profitrevLTC,
-                profitETH;
-        public static DateTime dateNow = DateTime.Now, date = dateNow.AddHours(-6), timeS, date15 = date.AddSeconds(-15);
+        public static double profitLTC, profitrevLTC, profitETH;
+        public static DateTime dateNow = DateTime.Now, date = dateNow.AddHours(-4), 
+            timeS, date15 = date.AddSeconds(-15);
         public static string orderT,suck;
         public static double prise;
+        public static DateTime[] timeArr1, timeArr2, timeArr3;
+        public static string[] orderArr1, orderArr2, orderArr3;
+        public static double[] priseArr1, priseArr2, priseArr3;
 
         public static void LTC()
         {
@@ -163,25 +167,74 @@ namespace Arbitraj_Bittrex_Console
             catch { throw; }
             var Settings3 = JsonConvert.DeserializeObject<Order3>(gm);
 
-            foreach (var Set in Settings1.result)
-            {
-                timeS = Set.TimeStamp;
-                orderT = Set.OrderType;
-                prise = Set.Price;
+            Settings1[] set1 = Settings1.result.ToArray();
+            Settings2[] set2 = Settings2.result.ToArray();
+            Settings3[] set3 = Settings3.result.ToArray();
 
-                if ((timeS >= date15) && (timeS <= date))
+            foreach (var Set in set1)
+            {
+                for (int i = 0; i < set1.Length; i++)
                 {
-                    if (orderT == "SELL")
+                    timeS = set1[i].TimeStamp;
+                    orderT = set1[i].OrderType;
+                    prise = set1[i].Price;
+                    
+                    if ((timeS >= date15) && (timeS <= date))
                     {
-                        if (prise <= ask)
+                        if (orderT == "SELL")
                         {
-                            suck = "success";
+                            if (prise <= ask)
+                            {
+                                suck = "success";
+                                
+                            }
                         }
-                        else { suck = "shit"; }
                     }
-                    else { suck = "BUY"; }
                 }
-                else { suck = "time down"; }
+            }
+
+            foreach (var Set in set2)
+            {
+                for (int i = 0; i < set2.Length; i++)
+                {
+                    timeS = set2[i].TimeStamp;
+                    orderT = set2[i].OrderType;
+                    prise = set2[i].Price;
+
+                    if ((timeS >= date15) && (timeS <= date))
+                    {
+                        if (orderT == "SELL")
+                        {
+                            if (prise <= ask)
+                            {
+                                suck = "success";
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            foreach (var Set in set3)
+            {
+                for (int i = 0; i < set3.Length; i++)
+                {
+                    timeS = set3[i].TimeStamp;
+                    orderT = set3[i].OrderType;
+                    prise = set3[i].Price;
+
+                    if ((timeS >= date15) && (timeS <= date))
+                    {
+                        if (orderT == "SELL")
+                        {
+                            if (prise <= ask)
+                            {
+                                suck = "success";
+
+                            }
+                        }
+                    }
+                }
             }
 
             //
