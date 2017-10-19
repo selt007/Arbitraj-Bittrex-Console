@@ -167,6 +167,7 @@ namespace Arbitraj_Bittrex_Console
             catch { throw; }
             var Settings3 = JsonConvert.DeserializeObject<Order3>(gm);
 
+            //Массив из джи-сона
             Settings1[] set1 = Settings1.result.ToArray();
             Settings2[] set2 = Settings2.result.ToArray();
             Settings3[] set3 = Settings3.result.ToArray();
@@ -175,18 +176,27 @@ namespace Arbitraj_Bittrex_Console
             {
                 for (int i = 0; i < set1.Length; i++)
                 {
+                    //прогон переменных из джисона
                     timeS = set1[i].TimeStamp;
                     orderT = set1[i].OrderType;
                     prise = set1[i].Price;
                     
+                    //условия
                     if ((timeS >= date15) && (timeS <= date))
                     {
                         if (orderT == "SELL")
                         {
                             if (prise <= ask)
                             {
-                                suck = "success";
-                                
+                                //добавление в новый массив переменных
+                                //для дальнейшей работы
+                                for (int j = 0; j < set1.Length; j++)
+                                {
+                                    //исключения тут
+                                    timeArr1[j] = timeS;
+                                    orderArr1[j] = orderT;
+                                    priseArr1[j] = prise;
+                                }
                             }
                         }
                     }
@@ -207,8 +217,12 @@ namespace Arbitraj_Bittrex_Console
                         {
                             if (prise <= ask)
                             {
-                                suck = "success";
-
+                                for (int j = 0; j < set2.Length; j++)
+                                {
+                                    timeArr2[j] = timeS;
+                                    orderArr2[j] = orderT;
+                                    priseArr2[j] = prise;
+                                }
                             }
                         }
                     }
@@ -229,8 +243,12 @@ namespace Arbitraj_Bittrex_Console
                         {
                             if (prise <= ask)
                             {
-                                suck = "success";
-
+                                for (int j = 0; j < set3.Length; j++)
+                                {
+                                    timeArr3[j] = timeS;
+                                    orderArr3[j] = orderT;
+                                    priseArr3[j] = prise;
+                                }
                             }
                         }
                     }

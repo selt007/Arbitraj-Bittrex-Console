@@ -59,7 +59,7 @@ namespace Arbitraj_Bittrex_Console
                 Console.WriteLine("Data now: " + DateTime.Now);
                 Console.WriteLine("Normal: " + BTC_ETH_X.profitLTC + " mBTC");
                 Console.WriteLine("Revers: " + BTC_ETH_X.profitrevLTC + " mBTC");
-                Console.WriteLine("Рыбалка:" + BTC_ETH_X.profitETH + "mETH");
+                Console.WriteLine("Рыбалка:" + BTC_ETH_X.profitETH + " mETH");
                 Console.WriteLine("");
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("XEPH9 !!!");
@@ -77,7 +77,7 @@ namespace Arbitraj_Bittrex_Console
                 Console.WriteLine("Data now: " + DateTime.Now);
                 Console.WriteLine("Normal: " + BTC_ETH_X.profitLTC + " mBTC");
                 Console.WriteLine("Revers: " + BTC_ETH_X.profitrevLTC + " mBTC");
-                Console.WriteLine("Рыбалка:" + BTC_ETH_X.profitETH + "mETH");
+                Console.WriteLine("Рыбалка:" + BTC_ETH_X.profitETH + " mETH");
                 Console.WriteLine("");
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("PROFIT ---->>> " + profitMax + " mBTC");
