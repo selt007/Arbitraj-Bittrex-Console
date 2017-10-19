@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("Arbitraj Bittrex Console")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyDescription("Arbitraj")]
+[assembly: AssemblyConfiguration("for Bittrex")]
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("Arbitraj Bittrex Console")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("©")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми

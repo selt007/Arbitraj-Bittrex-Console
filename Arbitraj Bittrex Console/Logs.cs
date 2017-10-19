@@ -1,5 +1,4 @@
 ﻿using NLog;
-using NLog.Config;
 
 namespace Arbitraj_Bittrex_Console
 {
